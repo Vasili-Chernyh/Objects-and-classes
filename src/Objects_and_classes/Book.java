@@ -1,8 +1,8 @@
 package Objects_and_classes;
 
 public class Book {
-    String title;
-    Author writer;
+    private String title;
+    private Author writer;
     private int age;
     public Book (String name, Author writer,int age) {
         this.title = name;
@@ -24,4 +24,5 @@ public class Book {
     public void setAge(int age) {
         this.age = age;
     }
+
 }
