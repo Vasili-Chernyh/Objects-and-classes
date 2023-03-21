@@ -1,10 +1,15 @@
 package Objects_and_classes;
 
+import com.sun.source.doctree.AuthorTree;
+
+import java.util.Objects;
+
 public class Book {
     private String title;
     private Author writer;
     private int age;
-    public Book (String name, Author writer,int age) {
+
+    public Book(String name, Author writer, int age) {
         this.title = name;
         this.writer = writer;
         this.age = age;
@@ -13,7 +18,7 @@ public class Book {
     public String getTitle() {
         return this.title;
     }
-    public Author getWriter () {
+    public Author getWriter() {
         return this.writer;
     }
 
@@ -25,4 +30,26 @@ public class Book {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", writer=" + writer +
+                ", age=" + age +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return age == book.age;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age);
+    }
 }
+
